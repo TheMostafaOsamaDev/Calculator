@@ -1,0 +1,205 @@
+:root {
+    --main-background: rgb(58, 71, 100);
+    --togglebar-keypad-background: rgb(35, 44, 67);
+    --screen-header-color: #ffffff;
+    --screen-background: rgb(24, 32, 52);
+    --del-reset-background: rgb(99, 112, 151);
+    --del-reset-shadow: rgb(64, 78, 114);
+    --equal-toggle-background: rgb(208, 63, 47);
+    --equal-toggle-shadow: rgb(147, 38, 26);
+    --keys-background: rgb(234, 227, 220);
+    --keys-shadow-background: rgb(180, 165, 151);
+    --keys-text-color: rgb(68, 75, 90);
+    /*Sizes*/
+    --main-border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: transparent;
+    color: inherit;
+}
+
+body {
+    font-family: "Spartan", sans-serif;
+    background-color: var(--main-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.calc {
+    padding: 20px 15px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header */
+.header {
+    color: var(--screen-header-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .left {
+    margin: 0;
+    font-size: 22px;
+}
+
+.header .right {
+    display: flex;
+    gap: 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.header .theme-changer {
+    width: 55px;
+    height: 22px;
+    border-radius: calc(var(--main-border-radius) + 5px);
+    background-color: var(--togglebar-keypad-background);
+    position: relative;
+}
+
+.header .theme-changer .dot {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    background-color: var(--equal-toggle-background);
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.header .theme-changer .dot:hover {
+    opacity: 0.8;
+}
+
+.header .right .toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/*Screen*/
+.screen {
+    width: 340px;
+    height: 110px;
+    padding: 5px 20px;
+    font-size: 32px;
+    border-radius: var(--main-border-radius);
+    background-color: var(--screen-background);
+    color: var(--screen-header-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.screen .hand {
+    opacity: 0.7;
+}
+/*KeyPad*/
+
+.keypad {
+    width: 340px;
+    padding: 20px;
+    background-color: var(--togglebar-keypad-background);
+    border-radius: var(--main-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+}
+
+.keypad .top-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, calc(290px / 4));
+    grid-template-rows: repeat(4, calc(180px / 4));
+    gap: 18px;
+}
+
+.keypad .bottom-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, calc(326px / 2));
+    grid-template-rows: repeat(1, calc(90px / 2));
+    gap: 18px;
+}
+
+.keypad .keys {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--keys-text-color);
+    background-color: var(--keys-background);
+    box-shadow: 0 5px var(--keys-shadow-background);
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: var(--main-border-radius);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.keypad .keys:hover {
+    opacity: 0.9;
+}
+
+.keypad .keys.delete-butt,
+.keypad .keys.reset-butt {
+    background-color: var(--del-reset-background);
+    box-shadow: 0 5px var(--del-reset-shadow);
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.keypad .keys.eq-butt {
+    background-color: var(--equal-toggle-background);
+    box-shadow: 0px 5px var(--equal-toggle-shadow);
+    color: #ffffff;
+}
+
+@media (min-width: 350px) and (max-width: 550px) {
+    .calc {
+        gap: 30px;
+    }
+    .screen {
+        width: 323px;
+        height: 100px;
+        padding: 5px 15px;
+    }
+
+    .keypad {
+        width: 323px;
+        padding: 15px;
+    }
+
+    .keypad .top-buttons {
+        grid-template-columns: repeat(4, calc(270px / 4));
+        grid-template-rows: repeat(4, calc(300px / 4));
+    }
+
+    .keypad .bottom-buttons {
+        grid-template-columns: repeat(2, calc(306px / 2));
+        grid-template-rows: repeat(1, calc(130px / 2));
+    }
+}
+
+
