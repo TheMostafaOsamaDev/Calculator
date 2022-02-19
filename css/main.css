@@ -179,6 +179,7 @@ ul {
 @media (min-width: 350px) and (max-width: 550px) {
     .calc {
         gap: 30px;
+        padding-top: 5px;
     }
     .screen {
         width: 323px;
@@ -193,12 +194,12 @@ ul {
 
     .keypad .top-buttons {
         grid-template-columns: repeat(4, calc(270px / 4));
-        grid-template-rows: repeat(4, calc(270px / 4));
+        grid-template-rows: repeat(4, calc(245px / 4));
     }
 
     .keypad .bottom-buttons {
         grid-template-columns: repeat(2, calc(306px / 2));
-        grid-template-rows: repeat(1, calc(135px / 2));
+        grid-template-rows: repeat(1, calc(122.5px / 2));
     }
 }
 
