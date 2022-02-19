@@ -193,12 +193,12 @@ ul {
 
     .keypad .top-buttons {
         grid-template-columns: repeat(4, calc(270px / 4));
-        grid-template-rows: repeat(4, calc(300px / 4));
+        grid-template-rows: repeat(4, calc(270px / 4));
     }
 
     .keypad .bottom-buttons {
         grid-template-columns: repeat(2, calc(306px / 2));
-        grid-template-rows: repeat(1, calc(130px / 2));
+        grid-template-rows: repeat(1, calc(135px / 2));
     }
 }
 
