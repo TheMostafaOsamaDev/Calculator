@@ -178,7 +178,7 @@ ul {
 
 @media (min-width: 350px) and (max-width: 550px) {
     .calc {
-        gap: 30px;
+        gap: 25px;
         padding-top: 5px;
     }
     .screen {
